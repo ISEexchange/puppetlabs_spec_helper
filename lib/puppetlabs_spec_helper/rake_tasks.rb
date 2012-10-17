@@ -92,7 +92,7 @@ task :spec_clean do
   end
   site = "spec/fixtures/manifests/site.pp"
   if File::exists?(site) and ! File.size?(site)
-    FileUtils::rm("spec/fixtures/manifests/site.pp")
+    #FileUtils::rm("spec/fixtures/manifests/site.pp")
   end
 end
 
