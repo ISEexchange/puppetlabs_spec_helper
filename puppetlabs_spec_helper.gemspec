@@ -1,19 +1,8 @@
 # -*- encoding: utf-8 -*-
-require 'fileutils'
-
-def version
-# This ugly bit removes the gSHA1 portion of the describe as that causes failing tests
-  if File.exists?('.git')
-    %x{git describe}.chomp.gsub('-', '.').split('.')[0..3].join('.').gsub('v', '')
-  else
-    %x{pwd}.strip!.split('.')[-1]
-  end
-end
-
 Gem::Specification.new do |s|
   s.name = "puppetlabs_spec_helper"
-  s.version     = version
-  s.platform    = Gem::Platform::RUBY
+  s.version          = "0.4.0"
+  s.platform         = Gem::Platform::RUBY
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors          = ["Puppet Labs"]
